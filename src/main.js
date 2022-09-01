@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { Home } from './componentes/Home.js';
 import { Login } from './componentes/Login.js';
 import { Register } from './componentes/Register.js';
@@ -17,7 +18,7 @@ export const onNavigate = (pathname) => {
     window.location.origin + pathname,
   );
   while (rootDiv.firstChild) {
-    rootDiv.removeChild(root.firstChild);
+    rootDiv.removeChild(rootDiv.firstChild);
   }
   rootDiv.appendChild(routes[pathname]());
 };
@@ -26,6 +27,6 @@ const componentes = routes[window.location.pathname];
 
 window.onpopstate = () => {
   rootDiv.appendChild(componentes());
-}
+};
 
 rootDiv.appendChild(componentes());

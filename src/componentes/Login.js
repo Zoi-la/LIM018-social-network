@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
+
 export const Login = () => {
   const homeDiv = document.createElement('div');
   homeDiv.textContent = 'Login';

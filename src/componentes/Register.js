@@ -1,4 +1,6 @@
 // eslint-disable-next-line import/no-cycle
+import { registro } from '../firebase/firebaseAuth.js';
+// eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
 export const Register = () => {
@@ -41,6 +43,12 @@ export const Register = () => {
   formRegister.appendChild(btnSubmit);
   homeDiv.appendChild(formRegister);
   homeDiv.appendChild(btnHome);
+
+  // eslint-disable-next-line no-undef
+  formRegister.addEventListener('submit', (e) => {
+    e.preventDefault();
+    registro(inputEmail.value, inputPassword.value);
+  });
 
   return homeDiv;
 };
