@@ -1,4 +1,6 @@
 // eslint-disable-next-line import/no-cycle
+import { inicioDeSesion } from '../firebase/firebaseAuth.js';
+// eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
 export const Login = () => {
@@ -32,6 +34,14 @@ export const Login = () => {
   formLogin.appendChild(btnInit);
   homeDiv.appendChild(formLogin);
   homeDiv.appendChild(btnHome);
+
+  formLogin.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = inputEmail.value;
+    const password = inputPass.value;
+    inicioDeSesion(email, password);
+  });
 
   return homeDiv;
 };
