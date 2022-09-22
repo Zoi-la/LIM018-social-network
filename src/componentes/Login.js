@@ -5,7 +5,10 @@ import { onNavigate } from '../main.js';
 
 export const Login = () => {
   const homeDiv = document.createElement('div');
-  homeDiv.textContent = 'Login';
+  const loginDiv = document.createElement('div');
+  const titleLogin = document.createElement('p');
+  titleLogin.textContent = 'Login';
+  titleLogin.className = 'titleLogin';
 
   const formLogin = document.createElement('form');
   formLogin.className = 'formLogin';
@@ -24,14 +27,16 @@ export const Login = () => {
   btnInit.setAttribute('type', 'submit');
 
   const btnHome = document.createElement('button');
-
+  btnHome.className = 'homeLog';
   btnHome.textContent = 'Home';
 
   btnHome.addEventListener('click', () => onNavigate('/'));
 
+  loginDiv.appendChild(titleLogin);
   formLogin.appendChild(inputEmail);
   formLogin.appendChild(inputPass);
   formLogin.appendChild(btnInit);
+  homeDiv.appendChild(loginDiv);
   homeDiv.appendChild(formLogin);
   homeDiv.appendChild(btnHome);
 

@@ -1,8 +1,8 @@
 /* eslint-disable import/no-unresolved */
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js';
-import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js';
+import { getFirestore, collection, addDoc, getDocs, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,8 +20,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 const auth = getAuth(app);
+const db = getFirestore(app);
+
+export const createPost = async (user, description) => {
+  const createPostCollection = await addDoc(collection(db, 'posts'), {
+    description,
+    user,
+  });
+  return createPostCollection;
+};
+
+export const getPosts = await getDocs(collection(db, 'posts'));
+
+export const ongetPost = (callback) => onSnapshot(collection(db, 'posts'), callback);
 
 export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword };

@@ -5,7 +5,10 @@ import { onNavigate } from '../main.js';
 
 export const Register = () => {
   const homeDiv = document.createElement('div');
-  homeDiv.textContent = 'Registro';
+  const registerDiv = document.createElement('div');
+  const titleRegister = document.createElement('p');
+  titleRegister.textContent = 'Registro';
+  titleRegister.className = 'titleRegister';
 
   const formRegister = document.createElement('form');
   formRegister.className = 'formRegister';
@@ -27,20 +30,23 @@ export const Register = () => {
   inputPassConfirm.placeholder = 'Confirma tu contraseña';
 
   const btnSubmit = document.createElement('button');
-  btnSubmit.textContent = 'Registrarte';
+  btnSubmit.textContent = 'Registrate';
   btnSubmit.id = 'btnsubmit';
   btnSubmit.setAttribute('type', 'submit');
 
   const btnHome = document.createElement('button');
   btnHome.textContent = 'Home';
+  btnHome.className = 'home';
 
   btnHome.addEventListener('click', () => onNavigate('/'));
 
+  registerDiv.appendChild(titleRegister);
   formRegister.appendChild(inputName);
   formRegister.appendChild(inputEmail);
   formRegister.appendChild(inputPassword);
   formRegister.appendChild(inputPassConfirm);
   formRegister.appendChild(btnSubmit);
+  homeDiv.appendChild(registerDiv);
   homeDiv.appendChild(formRegister);
   homeDiv.appendChild(btnHome);
 

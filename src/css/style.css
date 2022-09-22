@@ -6,8 +6,110 @@ body{
     background-color: white;
 }
 
-.image {
-    width: 30%;
+.divBoton {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+#register, #login {
+    margin: 10px;
+    width: 40%;
+    
+}
+
+
+.title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 31%;
+    right: 26%;
+}
+
+#logo {
+    display: flex;
+    width: 60%;
+    margin-top: 15%;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.titleRegister {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 15%;
+    right: 35%;
+}
+
+.formRegister {
+    margin-left: 10%;
+    padding: 50px;
+    border-radius: 8px;   
+    font-size: 100%;
+    width: 80%;
+    border-radius: 8px;
+    font-size: 22px;    
+    border: 2px solid rgb(18, 221, 92);
+    margin-top: 50%;
+
+}
+.home {
+    margin-left: 43%;
+    padding: 5px;
+    font-size: 15px;    
+    margin-top: 10px;
+    align-items: center;
+}
+
+#btnsubmit {
+    margin: 5px;
+    width: 43%;
+    padding: 5px;
+    font-size: 15px;    
+    margin-top: 10px;
+    
+    
+}
+
+.titleLogin {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 15%;
+    right: 40%;
+}
+
+.formLogin {
+    margin-left: 10%;
+    padding: 50px;
+    border-radius: 8px;   
+    font-size: 100%;
+    width: 80%;
+    border-radius: 8px;
+    font-size: 22px;    
+    border: 2px solid rgb(18, 221, 92);
+    margin-top: 50%;
+
+}
+
+.homeLog {
+    margin-left: 43%;
+    padding: 5px;
+    font-size: 15px;    
+    margin-top: 10px;
+    align-items: center;
 }
 
 footer {

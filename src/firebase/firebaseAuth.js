@@ -11,6 +11,11 @@ export const registro = (email, password) => {
       if (user) {
         onNavigate('/login');
       }
+    })
+    .catch ((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
     });
 };
 
@@ -22,5 +27,9 @@ export const inicioDeSesion = (email, password) => {
       if (user) {
         onNavigate('/muro');
       }
+    })
+    .catch ((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
     });
 };
